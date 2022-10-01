@@ -40,12 +40,12 @@
     }
     window.addEventListener("load", function (event) {
         var userid = 'linchao@nkust.edu.tw';
-        httpGet('/projects/hitcount' + "?id=" + userid)
+            httpGet('https://rmilab.nkust.edu.tw@Url.Action("hitcount","projects")' + "?id=" + userid)
     
     });
 </script>
 <button onclick="dohit(this)"><img></button>
-點次數:<label id="myhit">19</label><br>
+點次數:<label id="myhit"></label><br>
 
 </div> 
 <p>這是第一個段落</p>
