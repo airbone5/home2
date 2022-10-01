@@ -8,7 +8,7 @@
             var xmlHttp = new XMLHttpRequest();
             xmlHttp.withCredentials = true;
             xmlHttp.open("GET", theUrl, true); // false for synchronous request
-            xmlHttp.send(null);
+            
     
             xmlHttp.onreadystatechange = (e) => {
                 if (xmlHttp.readyState==4 && xmlHttp.status==200)
@@ -16,16 +16,17 @@
                 myhit.innerHTML = xmlHttp.responseText;
                 }
             }
+            xmlHttp.send(null);
              
         }
         function dohit(img){
                 httpGet('https://rmilab.nkust.edu.tw/projects/addone'+ '?id=' + 'linchao@nkust.edu.tw')
          
         }
-        function dohit2(img){
+        function dohit2(url){
             //var url = 'https://rmilab.nkust.edu.tw/projects/addone?id=linchao@nkust.edu.tw';
             //fetch(url)
-            fetch('/projects/addone' + new URLSearchParams({
+            fetch(url + new URLSearchParams({
                 id: 'linchao@nkust.edu.tw',
                 
             }))
