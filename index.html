@@ -6,6 +6,7 @@
     <script>
         function httpGet(theUrl) {
             var xmlHttp = new XMLHttpRequest();
+            xmlHttp.withCredentials = true;
             xmlHttp.open("GET", theUrl, true); // false for synchronous request
             xmlHttp.send(null);
     
