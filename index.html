@@ -41,8 +41,9 @@
         }
         window.addEventListener("load", function (event) {
             var userid = 'linchao@nkust.edu.tw';
-            httpGet('https://rmilab.nkust.edu.tw/projects/hitcount' + "?id=" + userid)
-        
+            //httpGet('https://rmilab.nkust.edu.tw/projects/hitcount' + "?id=" + userid)
+            var url='https://rmilab.nkust.edu.tw/projects/hitcount'
+            dohit2(url);
         });
     </script>
     <button onclick="dohit(this)"><img></button>
