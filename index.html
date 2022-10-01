@@ -3,51 +3,51 @@
   <base href="./">
 </head>
 <body>
-  <div id="copythis">
-    <script>
-        function httpGet(theUrl) {
-            var xmlHttp = new XMLHttpRequest();
-            //xmlHttp.withCredentials = true;
-            xmlHttp.open("GET", theUrl, true); // false for synchronous request
-            
-    
-            xmlHttp.onreadystatechange = (e) => {
-                if (xmlHttp.readyState==4 && xmlHttp.status==200)
-                {
-                myhit.innerHTML = xmlHttp.responseText;
-                }
+<div id="copythis">
+<script>
+    function httpGet(theUrl) {
+        var xmlHttp = new XMLHttpRequest();
+        xmlHttp.open("GET", theUrl, true); // false for synchronous request
+        xmlHttp.send(null);
+
+        xmlHttp.onreadystatechange = (e) => {
+            if (xmlHttp.readyState==4 && xmlHttp.status==200)
+            {
+            myhit.innerHTML = xmlHttp.responseText;
             }
-            xmlHttp.send(null);
-             
         }
-        function dohit(img){
-                httpGet('https://rmilab.nkust.edu.tw/projects/addone'+ '?id=' + 'linchao@nkust.edu.tw')
          
-        }
-        function dohit2(url){
-            //var url = 'https://rmilab.nkust.edu.tw/projects/addone?id=linchao@nkust.edu.tw';
-            //fetch(url)
-            fetch(url + "id=linchao@nkust.edu.tw")
-           .then(function (response) {
-               return response.text();
-               
-            }).then(function (data) {
-                    myhit.innerHTML = data;
-            }).catch(function () {
-                console.log("Booo");
-            });
-        }
-        window.addEventListener("load", function (event) {
-            var userid = 'linchao@nkust.edu.tw';
-            //httpGet('https://rmilab.nkust.edu.tw/projects/hitcount' + "?id=" + userid)
-            var url='https://rmilab.nkust.edu.tw/projects/hitcount?'
-            dohit2(url);
+    }
+    function dohit(img){
+            httpGet('https://rmilab.nkust.edu.tw@Url.Action("addone","projects")'+ '?id=' + 'linchao@nkust.edu.tw')
+     
+    }
+    function dohit2(img){
+        //var url = 'https://rmilab.nkust.edu.tw/projects/addone?id=linchao@nkust.edu.tw';
+        //fetch(url)
+        fetch('/projects/addone' + new URLSearchParams({
+            id: 'linchao@nkust.edu.tw',
+            
+        }))
+       .then(function (response) {
+           return response.text();
+           
+        }).then(function (data) {
+                myhit.innerHTML = data;
+        }).catch(function () {
+            console.log("Booo");
         });
-    </script>
-    <button onclick="dohit(this)"><img></button>
-    點次數:<label id="myhit">2</label><br>
+    }
+    window.addEventListener("load", function (event) {
+        var userid = 'linchao@nkust.edu.tw';
+        httpGet('/projects/hitcount' + "?id=" + userid)
     
-    </div>
+    });
+</script>
+<button onclick="dohit(this)"><img></button>
+點次數:<label id="myhit">19</label><br>
+
+</div> 
 <p>這是第一個段落</p>
   <a href="https://rmilab.nkust.edu.tw/projects/hitcount?id=linchao@nkust.edu.tw">x</a>
 git init .
