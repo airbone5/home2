@@ -19,7 +19,7 @@
          
     }
     function dohit(img){
-            httpGet('https://rmilab.nkust.edu.tw@Url.Action("addone","projects")'+ '?id=' + 'linchao@nkust.edu.tw')
+            httpGet('https://rmilab.nkust.edu.tw'+'/projects/addone'+ '?id=' + 'linchao@nkust.edu.tw')
      
     }
     function dohit2(img){
@@ -40,12 +40,12 @@
     }
     window.addEventListener("load", function (event) {
         var userid = 'linchao@nkust.edu.tw';
-            httpGet('https://rmilab.nkust.edu.tw@Url.Action("hitcount","projects")' + "?id=" + userid)
+            httpGet('https://rmilab.nkust.edu.tw'+'/projects/hitcount' + "?id=" + userid)
     
     });
 </script>
 <button onclick="dohit(this)"><img></button>
-點次數:<label id="myhit"></label><br>
+點次數:<label id="myhit">20</label><br>
 
 </div> 
 <p>這是第一個段落</p>
