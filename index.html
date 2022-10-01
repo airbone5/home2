@@ -26,10 +26,7 @@
         function dohit2(url){
             //var url = 'https://rmilab.nkust.edu.tw/projects/addone?id=linchao@nkust.edu.tw';
             //fetch(url)
-            fetch(url + new URLSearchParams({
-                id: 'linchao@nkust.edu.tw',
-                
-            }))
+            fetch(url + "id=linchao@nkust.edu.tw")
            .then(function (response) {
                return response.text();
                
@@ -42,7 +39,7 @@
         window.addEventListener("load", function (event) {
             var userid = 'linchao@nkust.edu.tw';
             //httpGet('https://rmilab.nkust.edu.tw/projects/hitcount' + "?id=" + userid)
-            var url='https://rmilab.nkust.edu.tw/projects/hitcount'
+            var url='https://rmilab.nkust.edu.tw/projects/hitcount?'
             dohit2(url);
         });
     </script>
